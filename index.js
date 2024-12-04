@@ -1,6 +1,14 @@
 import { ChemicalServer } from "chemicaljs";
 import express from "express";
-
+const build = new ChemicalBuild({
+    path: "dist",
+    default: "uv",
+    uv: true,
+    scramjet: true,
+    meteor: true,
+    rammerhead: false,
+});
+build.write(true)
 const [app, listen] = new ChemicalServer();
 const port = process.env.PORT || 3000;
 
