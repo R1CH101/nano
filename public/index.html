@@ -14,6 +14,7 @@
     <p>Create your own using <a href="https://github.com/chemicaljs/chemical">Chemical!</a></p>
     <input autofocus spellcheck="false" autocomplete="off" id="search" data-frame="web" data-auto-https data-search-engine="https://www.google.com/search?q=%s" placeholder="Search or Enter a URL" is="chemical-input">
     <button onclick="loadsite()">Go!</button>
+    <p id="sitetrxt2"></p>
     <section id="controls" is="chemical-controls">
         <button onclick="chemicalAction('back', 'web')">Back</button>
         <button onclick="chemicalAction('forward', 'web')">Forward</button>
@@ -23,7 +24,8 @@
     <iframe id="web" data-controls="controls" is="chemical-iframe"></iframe>
 <script>
     async function loadsite(){
-    return await chemical.encode("https://example.com")
+    
+     document.getElementById("sitetrxt2").innertext =  await chemical.encode("https://example.com")
     }
 </script>
 </body>
