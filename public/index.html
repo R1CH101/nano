@@ -9,15 +9,12 @@
 	<body>
 		<h1>Chemical Example</h1>
 		<input id="search" placeholder="Enter URL" />
-
+<button onclick="visitsite();">Search</button>
 		<script>
 			const search = document.getElementById("search");
-
-			search.addEventListener("keydown", async function (e) {
-				if (e.key == "Enter" && chemical.loaded && e.target.value) {
-					window.location = await chemical.encode(e.target.value);
-				}
-			});
+                        function visitsite(){
+				window.location = await chemical.encode(search.value);
+			}
 		</script>
 	</body>
 </html>
