@@ -13,11 +13,12 @@
 		<script>
 			const search = document.getElementById("search");
 
-			search.addEventListener("keydown", async function (e) {
-				if (e.key == "Enter" && chemical.loaded && e.target.value) {
-					window.location = await chemical.encode(e.target.value);
-				}
-			});
+			async function loadsite(){
+				window.location = await chemical.encode(search.value);
+			}
+			
+			
+			
 		</script>
 	</body>
 </html>
