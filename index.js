@@ -1,15 +1,7 @@
 import { ChemicalServer } from "chemicaljs";
 import express from "express";
 
-const [app, listen] = new ChemicalServer({
-    default: "uv",
-    uv: true,
-    rammerhead: true,
-    experimental: {
-        scramjet: false,
-        meteor: false,
-    }
-});
+const [app, listen] = new ChemicalServer();
 const port = process.env.PORT || 3000;
 
 app.use(express.static("public", {
@@ -19,6 +11,11 @@ app.use(express.static("public", {
 
 app.serveChemical();
 
+app.use((req, res) => {
+    res.status(404);
+    res.send("404 Error");
+});
+
 listen(port, () => {
-    console.log(`Fancy example listening on port ${port}`);
+    console.log(`Basic example listening on port ${port}`);
 });
