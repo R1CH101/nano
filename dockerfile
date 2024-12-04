@@ -1,7 +1,9 @@
-FROM node:20-slim AS base
+FROM node:18-alpine AS base
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
+RUN corepack prepare pnpm@8.10.4 --activate
+RUN corepack use pnpm@8.10.4
 COPY . /app
 WORKDIR /app
 
