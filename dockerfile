@@ -1,8 +1,7 @@
 FROM node:20-slim AS base
 RUN apt-get update && apt-get install wget -y
-RUN wget -qO- https://get.pnpm.io/install.sh | ENV="$HOME/.shrc" SHELL="$(which sh)" sh -
-
-
+RUN whoami
+RUN npm install -g pnpm
 RUN mkdir /app
 WORKDIR /app
 
