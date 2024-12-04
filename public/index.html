@@ -12,7 +12,7 @@
 <button onclick="visitsite();">Search</button>
 		<script>
 			const search = document.getElementById("search");
-                        function visitsite(){
+                        async function visitsite(){
 				window.location = await chemical.encode(search.value);
 			}
 		</script>
