@@ -8,5 +8,6 @@ RUN mkdir /app
 WORKDIR /app
 
 COPY . /app
-
+RUN pnpm run build
 CMD [ "pnpm", "start" ]
+
