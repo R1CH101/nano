@@ -1,8 +1,7 @@
 FROM node:20-slim AS base
 
-ENV PNPM_HOME="/pnpm"
-ENV PATH="$PNPM_HOME:$PATH"
-RUN corepack enable
+RUN wget -qO- https://get.pnpm.io/install.sh | ENV="$HOME/.shrc" SHELL="$(which sh)" sh -
+
 
 RUN mkdir /app
 WORKDIR /app
